@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://fb.me/react-0.13.3.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+        <title>React Components</title>
+    </head>
+    <body>
+    <h1>Adding property in react component</h1>
+    <div id="react-container"></div>
+    <script type="text/babel">
+        var MyComponent = React.createClass({
+            render: function() {
+                return <div>
+                    <h1>{this.props.text}</h1>
+                    <p>{this.props.children}</p>
+                    <p>here i am using this.props.text and this.props.children</p>
+                </div>;
+            }
+        });
+
+        React.render(<div>
+                    <MyComponent text="Hello Word" > 
+                    This is a Hello Word
+                    </MyComponent>
+                    <MyComponent text="How are you" > 
+                    This is a How are you
+                    </MyComponent>
+                    <MyComponent text="My name is krishank" > 
+                    This is a My name is krishank
+                    </MyComponent>
+                    </div>
+            , document.getElementById('react-container'));
+    </script>
+    </body>
+</html>
